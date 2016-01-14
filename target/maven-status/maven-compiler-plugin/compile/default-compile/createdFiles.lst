@@ -1,0 +1,14 @@
+de\heilwig\rfidbin\entity\Bin_.class
+de\heilwig\rfidbin\entity\Company.class
+de\heilwig\rfidbin\entity\Company_.class
+de\heilwig\rfidbin\resources\resetKindResource.class
+de\heilwig\rfidbin\Config.class
+de\heilwig\rfidbin\resources\getBinsResource.class
+de\heilwig\rfidbin\resources\setKindResource.class
+de\heilwig\rfidbin\RFIDBinConfiguration.class
+de\heilwig\rfidbin\entity\Product.class
+de\heilwig\rfidbin\entity\Bin.class
+de\heilwig\rfidbin\entity\Product_.class
+de\heilwig\rfidbin\resources\registerCompanyResource.class
+de\heilwig\rfidbin\resources\createBinResource.class
+de\heilwig\rfidbin\resources\getKindResource.class

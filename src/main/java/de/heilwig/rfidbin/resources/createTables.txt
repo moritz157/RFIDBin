@@ -1,0 +1,40 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package de.heilwig.rfidbin.resources;
+
+import de.heilwig.rfidbin.Config;
+import de.heilwig.rfidbin.entity.Product;
+import java.util.List;
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
+import javax.ws.rs.POST;
+import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
+
+/**
+ *
+ * @author Moritz
+ */
+@Stateless
+@Path("createTables/{MasterPass}")
+public class createTablesResource {
+    @PersistenceContext
+    EntityManager em;
+    
+    @POST
+    public String resetKind(@PathParam("MasterPass") String masterPass){
+       if(Config.checkMasterPass(masterPass)){
+           Query createNativeQuery = em.createNativeQuery("");
+           List<Product> get = (List<Product>) createNativeQuery.getResultList(); 
+           em.remove(get.get(0));
+           System.out.println("Tables created");
+           return "{'Status':'OK','Data':'Tables successfully created'}";
+       } 
+       return "{'Status':'Error','Data':'Authentification failed'}";
+    }   
+}
