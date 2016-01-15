@@ -10,7 +10,7 @@ package de.heilwig.rfidbin;
  * @author Moritz
  */
 public class Config {
-   private static  String masterPass = "20Wall-E-15RFIDBin16"; 
+   private static  String masterPass = "Your masterpassword"; 
    public static Boolean checkMasterPass(String pass){
        if(pass.equals(masterPass)) return true;
        return false;
